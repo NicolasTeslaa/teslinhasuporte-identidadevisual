@@ -59,6 +59,8 @@ YYYY-MM-DD_HH-mm-ss_descricao-curta_vNN.ext
 
 Exemplo: `2026-10-15_18-30-00_desenvolvimento-sistemas_v01.png`.
 
+Publicações no feed devem acompanhar uma legenda persuasiva em português, com palavras-chave relevantes usadas naturalmente, benefício claro e chamada para ação. Publicações nos Stories podem usar apenas o texto da arte quando isso fizer sentido.
+
 ## Publicação no Instagram
 
 A publicação via API do Instagram exige uma conta profissional, um token válido com as permissões necessárias e uma URL pública para a imagem. O arquivo local não é enviado diretamente pela API; a URL precisa ser acessível pelos servidores do Meta.

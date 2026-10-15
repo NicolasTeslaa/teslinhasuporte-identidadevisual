@@ -28,6 +28,17 @@ Before generating a new marketing image, inspect the relevant files in `assets/r
 - Keep each piece focused on one problem and one message. Avoid dense dashboards, many icons, excessive glow, or multiple competing calls to action.
 - When using ImageGen, pass selected reference files with the explicit role `reference image` and the logo with the role `brand reference`; preserve the logo identity and create original imagery.
 
+## Feed captions
+
+Every image published to the Instagram feed must include a caption unless the user explicitly requests a captionless post.
+
+- Write in clear Brazilian Portuguese with a persuasive but trustworthy tone.
+- Start with the customer's problem or desired outcome, then explain the benefit and finish with a practical call to action.
+- Include relevant search terms naturally, such as the service name, audience, and problem being solved; never use keyword stuffing or unrelated trends.
+- Prefer specific phrases that match the artwork and company scope, such as `software de gestão`, `sistema de gestão`, `pequenos negócios`, `empreendedores`, `clientes`, `vendas` and `tarefas`.
+- Use only claims supported by `docs/empresa.md`; do not promise fixed prices, deadlines, certifications, guarantees, or features that were not confirmed.
+- Add a small set of relevant hashtags only when they improve discovery. Keep the caption easy to scan with short paragraphs and a clear CTA.
+
 ## Generated images
 
 Whenever an image is generated for this project:
