@@ -11,8 +11,22 @@ Apply these project conventions to work in this repository.
 
 - Read `README.md` and the relevant file in `docs/` before making brand or company-content decisions.
 - Keep logos in `assets/logo/`, marketing artwork in `assets/marketing/`, and institutional documents in `docs/`.
+- Treat `assets/referencias/` as the visual reference library for future marketing pieces.
 - Preserve the existing Teslinha visual language: dark navy backgrounds, electric blue, light blue, white, and the lightbulb/notebook/swoosh logo.
 - Keep credentials in the local `.env`; never copy secrets into documentation, image prompts, commits, or public URLs.
+
+## Reference visual direction
+
+Before generating a new marketing image, inspect the relevant files in `assets/referencias/` and use them as layout and design references, not as content to copy.
+
+- Prefer a square 1:1 composition with a clean white or very light background and restrained light-blue shapes.
+- Lead with one concrete customer problem in a large, bold headline using accessible Portuguese; avoid technical jargon such as API, backend, or cloud.
+- Use a short explanatory sentence below the headline, then one clear visual subject that illustrates the problem or solution.
+- Use strong blue and dark navy typography, generous whitespace, and a large realistic device, component, or service scene in the lower or right area.
+- Use a sweeping electric-blue arc inspired by the logo as a framing element, without making the layout busy.
+- Place the Teslinha logo near the bottom, with enough clear space for legibility.
+- Keep each piece focused on one problem and one message. Avoid dense dashboards, many icons, excessive glow, or multiple competing calls to action.
+- When using ImageGen, pass selected reference files with the explicit role `reference image` and the logo with the role `brand reference`; preserve the logo identity and create original imagery.
 
 ## Generated images
 

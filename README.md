@@ -8,6 +8,7 @@ Materiais institucionais e peças de divulgação da Teslinha Suporte, empresa d
 .
 ├── assets/
 │   ├── logo/       # Logos em PNG e PDF vetorial
+│   ├── referencias/ # Referências de layout e direção visual
 │   └── marketing/  # Artes prontas para divulgação
 ├── .agents/
 │   └── skills/teslinha-suporte/ # Convenções do projeto para o Codex
@@ -30,6 +31,10 @@ Paleta de referência:
 | Azul principal | `#075BFF` |
 | Azul claro | `#55B8FF` |
 | Texto claro | `#FFFFFF` |
+
+## Referências visuais
+
+As imagens em [`assets/referencias/`](assets/referencias/) orientam as próximas peças de divulgação. Elas estabelecem uma linguagem quadrada e limpa, com fundo claro, manchete grande sobre um problema concreto, texto de apoio curto, imagem principal realista, arco azul da marca e logo na base. São referências de composição e design; textos e imagens devem ser originais em cada nova criação.
 
 ## Arte disponível
 
