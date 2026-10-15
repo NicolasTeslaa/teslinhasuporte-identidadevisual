@@ -57,3 +57,10 @@ Whenever an image is generated for this project:
 6. Report the exact saved path and filename in the final response.
 
 Existing assets do not need to be renamed retroactively unless the user asks for a migration.
+
+## Instagram formats
+
+- Feed posts should use the format requested by the user; square `1:1` is the default when no feed format is specified.
+- Stories must always be generated as vertical `9:16`, preferably `1080x1920` pixels. Never send a square feed artwork to Stories without creating a dedicated vertical version.
+- Keep the headline, supporting text, logo, and CTA inside the central safe area. Leave generous space near the top and bottom for Instagram's profile header, progress bar, reply field, and action controls.
+- Check the final 9:16 image at phone scale before publishing to confirm that no text or logo is cropped or hidden by the interface.

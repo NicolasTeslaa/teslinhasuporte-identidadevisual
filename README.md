@@ -61,6 +61,8 @@ Exemplo: `2026-10-15_18-30-00_desenvolvimento-sistemas_v01.png`.
 
 Publicações no feed devem acompanhar uma legenda persuasiva em português, com palavras-chave relevantes usadas naturalmente, benefício claro e chamada para ação. Publicações nos Stories podem usar apenas o texto da arte quando isso fizer sentido.
 
+Para Stories, sempre criar uma versão vertical `9:16` — preferencialmente `1080x1920 px` — com textos e logo dentro da área central segura. Não reutilizar diretamente uma arte quadrada do feed, pois o Instagram pode cortá-la.
+
 ## Publicação no Instagram
 
 A publicação via API do Instagram exige uma conta profissional, um token válido com as permissões necessárias e uma URL pública para a imagem. O arquivo local não é enviado diretamente pela API; a URL precisa ser acessível pelos servidores do Meta.
