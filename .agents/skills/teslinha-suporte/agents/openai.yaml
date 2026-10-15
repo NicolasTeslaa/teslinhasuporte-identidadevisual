@@ -1,0 +1,4 @@
+interface:
+  display_name: "Teslinha Suporte"
+  short_description: "Project guidance for Teslinha Suporte assets and branding"
+  default_prompt: "Apply the Teslinha Suporte project conventions to this task."

@@ -9,6 +9,8 @@ Materiais institucionais e peças de divulgação da Teslinha Suporte, empresa d
 ├── assets/
 │   ├── logo/       # Logos em PNG e PDF vetorial
 │   └── marketing/  # Artes prontas para divulgação
+├── .agents/
+│   └── skills/teslinha-suporte/ # Convenções do projeto para o Codex
 ├── docs/
 │   └── empresa.md  # Perfil institucional e escopo de serviços
 ├── .env            # Credenciais locais; não versionado
@@ -41,6 +43,16 @@ O escopo institucional completo está em [docs/empresa.md](docs/empresa.md). Ele
 ## Segurança
 
 Credenciais e tokens locais devem ficar no arquivo `.env`, que é ignorado pelo Git. Nunca publique esse arquivo, coloque segredos no README ou envie tokens em commits. Se uma credencial for exposta, revogue-a e gere outra no Meta antes de utilizá-la.
+
+## Skill do projeto
+
+As tarefas relacionadas a este repositório usam a skill local em `.agents/skills/teslinha-suporte/SKILL.md`. Ela centraliza as convenções da marca e, para novas imagens geradas, usa nomes com data, hora, descrição e versão:
+
+```text
+YYYY-MM-DD_HH-mm-ss_descricao-curta_vNN.ext
+```
+
+Exemplo: `2026-10-15_18-30-00_desenvolvimento-sistemas_v01.png`.
 
 ## Publicação no Instagram
 
