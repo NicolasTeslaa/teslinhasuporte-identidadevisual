@@ -12,6 +12,7 @@ class EmailParser(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.tags = []
         self.links = []
+        self.images = []
         self.text = []
 
     def handle_starttag(self, tag, attrs):
@@ -19,6 +20,8 @@ class EmailParser(HTMLParser):
         self.tags.append(tag)
         if tag == "a":
             self.links.append(attributes.get("href", ""))
+        if tag == "img":
+            self.images.append(attributes)
 
     def handle_data(self, data):
         self.text.append(data)
@@ -54,9 +57,18 @@ class EmailAutomacaoInstagramTest(unittest.TestCase):
         self.assertIn("Quero ativar pelo WhatsApp", self.visible_text)
         self.assertNotIn("script", self.parser.tags)
 
-    def test_email_nao_depende_de_imagens_e_cabe_no_limite_do_gmail(self):
-        self.assertNotIn("img", self.parser.tags)
+    def test_logo_usa_imagem_remota_segura_e_email_cabe_no_limite_do_gmail(self):
+        self.assertEqual(len(self.parser.images), 1)
+        logo = self.parser.images[0]
+        self.assertTrue(logo.get("src", "").startswith("https://"))
+        self.assertEqual(logo.get("alt"), "Teslinha Suporte")
+        self.assertNotIn("file:", logo.get("src", ""))
+        self.assertNotIn("data:", logo.get("src", ""))
         self.assertLess(EMAIL_PATH.stat().st_size, 102_400)
+
+    def test_inclui_identificacao_da_empresa(self):
+        self.assertIn("CNPJ 62.372.202/0001-11", self.visible_text)
+        self.assertIn("Várzea Paulista — SP", self.visible_text)
 
     def test_inclui_botao_compativel_com_outlook(self):
         self.assertIn("<!--[if mso]>", self.source)
