@@ -41,6 +41,12 @@ As imagens em [`assets/referencias/`](assets/referencias/) orientam as próximas
 - [Post minimalista — desenvolvimento de sistemas](assets/marketing/teslinha-desenvolvimento-sistemas-instagram-v2.png)
 - [Primeira versão do post](assets/marketing/teslinha-desenvolvimento-sistemas-instagram.png)
 
+## Email — automação para Instagram
+
+O arquivo [`email-automacao-instagram.html`](email-automacao-instagram.html) usa a direção visual **Teslinha clara**: fundo azul muito claro, superfícies brancas, texto azul-marinho, azul elétrico como cor principal e amarelo no destaque comercial. O CTA do WhatsApp usa verde escuro funcional para identificação rápida e contraste.
+
+O email não depende de JavaScript, fontes externas ou imagens remotas. A estrutura usa tabelas e estilos inline para compatibilidade com clientes de email, além de um botão VML alternativo para versões do Outlook que usam o mecanismo do Microsoft Word.
+
 ## Perfil da empresa
 
 O escopo institucional completo está em [docs/empresa.md](docs/empresa.md). Ele descreve os serviços, públicos atendidos, área de atuação e limites das informações disponíveis.
