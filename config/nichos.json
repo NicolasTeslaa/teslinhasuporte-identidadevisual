@@ -1,0 +1,38 @@
+{
+  "imobiliaria": {
+    "titulo": "Seus imóveis podem ser encontrados com mais facilidade",
+    "problema": "Quando a imobiliária não tem uma presença digital clara, o cliente pode encontrar os imóveis tarde — ou nem chegar até a equipe.",
+    "consequencia": "Informações ficam espalhadas, oportunidades se perdem e a equipe precisa repetir as mesmas respostas.",
+    "solucao": "um site com catálogo de imóveis, páginas para captação de contatos e organização das informações",
+    "beneficios": [
+      "Apresentar imóveis de forma organizada",
+      "Facilitar o contato de novos interessados",
+      "Reduzir dúvidas repetidas no atendimento"
+    ],
+    "cta": "Quero conversar sobre a imobiliária"
+  },
+  "barbearia": {
+    "titulo": "Mais horários organizados, menos mensagens para responder",
+    "problema": "Quando os agendamentos ficam só nas mensagens, a equipe perde tempo conferindo horários e pode deixar oportunidades sem resposta.",
+    "consequencia": "A rotina fica mais difícil de organizar e o cliente pode desistir antes de marcar.",
+    "solucao": "um site com apresentação dos serviços, agendamento e automações para organizar os horários",
+    "beneficios": [
+      "Deixar os serviços e horários mais claros",
+      "Facilitar o agendamento pelo celular",
+      "Diminuir tarefas repetitivas da equipe"
+    ],
+    "cta": "Quero organizar os agendamentos"
+  },
+  "padrao": {
+    "titulo": "Tecnologia para tirar o retrabalho da rotina",
+    "problema": "Quando informações e tarefas ficam espalhadas em planilhas, mensagens e ferramentas diferentes, a equipe perde tempo fazendo o mesmo trabalho mais de uma vez.",
+    "consequencia": "A operação fica mais difícil de acompanhar e decisões importantes dependem de conferências manuais.",
+    "solucao": "um sistema sob medida, com integrações e automações escolhidas a partir do processo da empresa",
+    "beneficios": [
+      "Centralizar informações importantes",
+      "Organizar tarefas e atendimentos",
+      "Automatizar etapas repetitivas"
+    ],
+    "cta": "Quero entender o que pode ser melhorado"
+  }
+}

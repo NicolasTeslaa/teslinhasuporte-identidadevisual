@@ -72,3 +72,16 @@ Para Stories, sempre criar uma versão vertical `9:16` — preferencialmente `10
 ## Publicação no Instagram
 
 A publicação via API do Instagram exige uma conta profissional, um token válido com as permissões necessárias e uma URL pública para a imagem. O arquivo local não é enviado diretamente pela API; a URL precisa ser acessível pelos servidores do Meta.
+
+## Gerador de e-mails por nicho
+
+O gerador lê uma planilha `.xlsx` ou `.csv` com contatos que autorizaram marketing e cria um HTML personalizado para cada linha autorizada.
+
+```bash
+python3 -m pip install -r requirements.txt
+python3 -m src.gerar_emails entrada/contatos.xlsx --saida saida
+```
+
+As colunas obrigatórias são `nome_contato`, `empresa`, `nicho`, `email` e `autorizou_marketing`. Os perfis de imobiliária, barbearia e fallback ficam em [`config/nichos.json`](config/nichos.json). O modelo HTML fica em [`templates/email-prospeccao.html`](templates/email-prospeccao.html), e os arquivos gerados e o relatório ficam em `saida/`.
+
+Linhas sem autorização positiva não geram e-mail. Para entender o formato da planilha e os campos opcionais, consulte [`entrada/README.md`](entrada/README.md).
