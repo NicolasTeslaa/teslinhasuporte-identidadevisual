@@ -17,7 +17,7 @@ Os testes foram escritos e executados antes das implementações de timeline, ce
 
 Renderizados 13 quadros de conteúdo e 7 de transições, na resolução final: frames 60, 190, 340, 530, 645, 800, 940, 1080, 1225, 1345, 1450, 1605 e 1765; transições 246, 486, 696, 876, 1296, 1506 e 1686. Arquivos em `out/stills/`. Prévia MP4 de 60 segundos também gerada para revisão.
 
-Inspeção de logo, hierarquia, mensagens, demonstrações, CTA, diagramas e trocas de fundo. Corrigido o conteúdo inicialmente cortado nas janelas de CRM e gestão; a janela final tem 670 px e o gráfico foi compactado preservando os rótulos. Notificação e identificação de dados ilustrativos ficam na margem segura. O teste de layout carrega a fonte real e mede scrollHeight/clientHeight e limites dos elementos no Chromium.
+Inspeção de logo, hierarquia, mensagens, demonstrações, CTA, diagramas e trocas de fundo. Corrigido o conteúdo inicialmente cortado nas janelas de CRM e gestão; a janela final tem 670 px e o gráfico foi compactado preservando os rótulos. Notificação e identificação de dados ilustrativos ficam na margem segura. O teste de layout carrega a fonte real e mede scrollHeight/clientHeight e limites dos elementos no Chromium. A conferência final também identificou uma sobreposição transitória entre a notificação e a legenda; o teste foi ampliado para seis frames de entrada e passou após reduzir o deslocamento e reservar espaço entre os dois elementos.
 
 Pares verificados com contraste mínimo 4,5:1: branco/azul, azul/branco, marinho/fundo claro, azul claro/marinho e texto secundário/fundo claro. Essa checagem cobre esses pares de texto, não significa certificação de acessibilidade de todo o vídeo ou garantia sobre sobreposições variáveis do Instagram.
 

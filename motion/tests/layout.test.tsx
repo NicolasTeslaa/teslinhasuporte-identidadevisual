@@ -19,14 +19,15 @@ test('interfaces completas cabem na janela e textos finais ficam na área segura
       fonts+=`@font-face{font-family:Manrope;font-style:normal;font-weight:${weight};src:url(data:font/woff2;base64,${data.toString('base64')}) format('woff2');}`;
     }
     const overflows:string[]=[];
-    for(const frame of [65,200,345]){
+    for(const frame of [65,70,200,210,345,350]){
       const html=`<head><style>${fonts}${css}</style></head><body>${renderToStaticMarkup(<Scene05 frame={frame}/>)}</body>`;
       await page.evaluate((markup:string)=>{document.documentElement.innerHTML=markup;},html);
       await page.evaluate('document.fonts.ready');
-      const bounds=await page.evaluate(`(()=>{const w=document.querySelector('.window');const n=document.querySelector('.notification');const d=document.querySelector('.demo-label');return {visible:w.clientHeight,content:w.scrollHeight,notificationBottom:n.getBoundingClientRect().bottom,disclaimerBottom:d.getBoundingClientRect().bottom};})()`);
+      const bounds=await page.evaluate(`(()=>{const w=document.querySelector('.window');const n=document.querySelector('.notification');const d=document.querySelector('.demo-label');return {visible:w.clientHeight,content:w.scrollHeight,notificationBottom:n.getBoundingClientRect().bottom,disclaimerBottom:d.getBoundingClientRect().bottom,disclaimerTop:d.getBoundingClientRect().top};})()`);
       if(bounds.content>bounds.visible)overflows.push(`frame ${frame}: conteúdo ${bounds.content}px excede janela ${bounds.visible}px`);
       assert.ok(bounds.notificationBottom<=1620);
       assert.ok(bounds.disclaimerBottom<=1620);
+      assert.ok(bounds.notificationBottom+8<=bounds.disclaimerTop,`frame ${frame}: notificação invade a legenda de demonstração`);
     }
     assert.deepEqual(overflows,[]);
   } finally {await browser.close({silent:true});}
