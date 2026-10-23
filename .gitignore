@@ -7,3 +7,7 @@ out/
 motion/build/
 motion/.remotion/
 motion/public/audio/*.wav
+
+!motion/public/audio/narration-masculina-v01.wav
+__pycache__/
+motion/.venv-narration/

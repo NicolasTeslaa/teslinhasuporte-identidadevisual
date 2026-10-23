@@ -28,3 +28,17 @@ Revisão de código, timeline, determinismo, áudio, scripts e testes. Único ac
 ## Direitos e limites
 
 Logo fornecida pelo usuário; Manrope com licença OFL incluída. Efeitos procedurais originais. Sem música licenciada externa nem locução. Vídeo de referência usado apenas em análise; nenhum quadro, música, CTA ou marca de terceiros integra o comercial. Números das telas são exemplos identificados. O WhatsApp é o informado no perfil institucional.
+
+
+## Atualização — versão com narração masculina
+
+Usuário solicitou voz masculina em português brasileiro, natural, confiante e comercial, acompanhando as animações. A nova saída é `out/teslinha-commercial-narrado.mp4`; a versão anterior permanece disponível.
+
+- `npm run validate`: **24 testes Node + 1 teste Python de cache passaram; TypeScript passou**.
+- Regressão da raiz: **15 testes existentes passaram**. Total: **40 testes**.
+- `npm run verify`: decodificação completa sem erros; H.264 yuv420p, 1080×1920, 30 FPS, 1800 frames, AAC 48 kHz; todas as 16 regiões de fala com energia audível.
+- `npm run verify -- --no-narration`: versão anterior também verificada, sem erros.
+- Novos testes escritos e executados em RED antes da implementação de planejamento, montagem, mixagem, leitura de PCM, detecção de trecho inaudível, cache e parsing de argumentos; depois GREEN.
+- Revisão independente apontou risco de cache antigo no caminho sem síntese e interpretação da flag isolada como arquivo. Ambos corrigidos com testes; rechecagem confirmou validação completa, sem achados pendentes nesse escopo.
+
+Veja `NARRATION.md` para voz, texto completo, tempos e regeneração. A energia por trecho valida presença/volume, sem alegar transcrição automática ou avaliação subjetiva da voz. A narração é sintética e usa uma voz padrão; não é clonagem de pessoa real específica. O WAV final fica versionado para render local reproduzível.

@@ -7,12 +7,14 @@
     "studio": "remotion studio src/index.ts",
     "test": "tsx --test tests/*.test.ts tests/*.test.tsx",
     "typecheck": "tsc --noEmit",
-    "validate": "npm run test && npm run typecheck",
+    "validate": "npm run test && npm run test:narration-cache && npm run typecheck",
     "audio": "tsx scripts/generate-audio.ts",
     "stills": "tsx scripts/render.ts stills",
     "render": "tsx scripts/render.ts video",
     "preview": "tsx scripts/render.ts preview",
-    "verify": "tsx scripts/verify.ts"
+    "verify": "tsx scripts/verify.ts",
+    "narration": "tsx scripts/build-narration.ts",
+    "test:narration-cache": "python3 -m unittest discover -s tests -p 'test_narration_synthesis.py'"
   },
   "dependencies": {
     "@fontsource/manrope": "5.3.0",
