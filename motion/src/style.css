@@ -1,0 +1,47 @@
+@import '@fontsource/manrope/400.css';
+@import '@fontsource/manrope/600.css';
+@import '@fontsource/manrope/700.css';
+@import '@fontsource/manrope/800.css';
+* { box-sizing: border-box; }
+body { margin: 0; }
+.scene { font-family: 'Manrope', sans-serif; overflow: hidden; font-weight: 600; --accent: #55B8FF; }
+.scene.dark { background: #050B1A; color: #FFFFFF; }
+.scene.light { background: #F2F6FF; color: #101B36; --accent: #075BFF; }
+.ambient { position: absolute; inset: -150px; }
+.background-arc { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+.brand { position: absolute; top: 220px; left: 84px; display: flex; align-items: center; gap: 18px; }
+.brand-symbol { width: 76px; height: 76px; border-radius: 17px; background: #050B1A; display: grid; place-items: center; }
+.brand-name { font-size: 38px; letter-spacing: -1.1px; font-weight: 800; line-height: 1.1; }
+.brand-descriptor { font-size: 14px; letter-spacing: 7px; margin-top: 7px; font-weight: 800; }
+.headline { position: absolute; left: 84px; width: 912px; font-weight: 800; line-height: 1.08; letter-spacing: -0.035em; }
+.small-text { position: absolute; left: 84px; width: 912px; font-size: 30px; line-height: 1.5; }
+.tag { display: inline-flex; align-items: center; gap: 10px; border-radius: 30px; padding: 10px 18px; font-size: 22px; font-weight: 700; }
+.demo-label { position: absolute; left: 84px; width: 912px; color: #52617D; text-align: center; font-size: 23px; line-height: 1.3; font-weight: 600; }
+.window { background: #FFFFFF; color: #101B36; border-radius: 20px; overflow: hidden; box-shadow: 0 35px 80px #030B1B33; }
+.window.dark-window { background: #101B36; color: white; box-shadow: 0 35px 80px #00000055; }
+.window-bar { height: 64px; display: flex; align-items: center; gap: 10px; padding: 0 26px; border-bottom: 1px solid #DCE8FF; font-size: 20px; font-weight: 700; }
+.window-dot { width: 9px; height: 9px; border-radius: 50%; background: #A9B9D4; }
+.window-bar-title { margin-left: 14px; }
+.app-header { display: flex; align-items: center; justify-content: space-between; padding: 22px 30px 18px; }
+.app-title { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; }
+.app-sub { font-size: 22px; color: #52617D; margin-top: 7px; }
+.app-action { padding: 14px 18px; color: white; background: #075BFF; border-radius: 12px; display: flex; gap: 8px; align-items: center; font-size: 21px; }
+.toolbar { display: flex; justify-content: space-between; padding: 12px 30px 25px; color: #52617D; font-size: 21px; }
+.app-body { padding: 0 30px 30px; }
+.kanban { display: flex; gap: 16px; }
+.kanban-col { flex: 1; min-width: 0; background: #F2F6FF; padding: 18px 14px; border-radius: 14px; }
+.kanban-heading { font-size: 22px; font-weight: 800; display: flex; justify-content: space-between; margin-bottom: 14px; }
+.lead { background: white; border-radius: 12px; padding: 16px 14px; min-height: 175px; margin-bottom: 14px; }
+.avatar { width: 40px; height: 40px; background: #DCE8FF; color: #075BFF; border-radius: 50%; display: grid; place-items: center; font-size: 15px; font-weight: 800; }
+.lead-name { font-size: 22px; font-weight: 800; margin-top: 16px; }
+.lead-company { font-size: 18px; color: #52617D; margin-top: 5px; }
+.lead-service { font-size: 17px; color: #075BFF; margin-top: 17px; }
+.metric-row { display: flex; gap: 18px; margin-bottom: 26px; }
+.metric { flex: 1; background: #F2F6FF; border-radius: 14px; padding: 21px; }
+.metric-label { color: #52617D; font-size: 20px; }
+.metric-value { font-size: 52px; font-weight: 800; letter-spacing: -2px; margin: 7px 0; }
+.metric-trend { color: #52617D; font-size: 18px; }
+.chart-label { color: #52617D; font-size: 20px; }
+.workflow-row { display: flex; align-items: center; gap: 20px; height: 82px; border-bottom: 1px solid #DCE8FF; font-size: 24px; }
+.workflow-check { width: 38px; height: 38px; background: #DCE8FF; color: #075BFF; border-radius: 10px; display: grid; place-items: center; }
+.notification { display: flex; align-items: center; gap: 20px; padding: 23px; background: #075BFF; color: white; border-radius: 15px; box-shadow: 0 25px 55px #075BFF2B; }

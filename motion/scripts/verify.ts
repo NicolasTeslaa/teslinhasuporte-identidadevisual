@@ -1,0 +1,13 @@
+import {RenderInternals} from '@remotion/renderer';
+import {writeFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {assertCommercialMetadata, assertDecodeLog, type Probe} from '../src/media-contract';
+const file=resolve(process.argv[2]??'../out/teslinha-commercial.mp4');
+const run=(bin:'ffmpeg'|'ffprobe',args:string[])=>RenderInternals.callFf({bin,args,indent:false,logLevel:'error',binariesDirectory:null,cancelSignal:undefined});
+const result=await run('ffprobe',['-v','error','-show_streams','-show_format','-of','json',file]);
+const probe=JSON.parse(result.stdout) as Probe;
+assertCommercialMetadata(probe);
+const decoded=await run('ffmpeg',['-xerror','-v','error','-i',file,'-c:v','rawvideo','-c:a','pcm_s16le','-f','null','-']);
+assertDecodeLog(decoded.stderr);
+await writeFile('../out/verification.json',JSON.stringify({file,verified:new Date().toISOString(),decode:'passed',...probe},null,2));
+console.log('PASS — H.264 yuv420p, 1080×1920, 30 FPS, 1800 frames, 60 s, AAC 48 kHz. Decodificação completa sem erros.');

@@ -51,7 +51,21 @@ O email não depende de JavaScript, fontes externas ou imagens remotas. A estrut
 
 O escopo institucional completo está em [docs/empresa.md](docs/empresa.md). Ele descreve os serviços, públicos atendidos, área de atuação e limites das informações disponíveis.
 
-## Segurança
+## Comercial em motion — sistemas e automações
+
+O projeto executável do comercial vertical de 60 segundos da Teslinha Suporte está em [`motion/`](motion/README.md), com React, TypeScript, Remotion, oito cenas independentes, logo oficial, fontes locais e efeitos sonoros originais. O roteiro foi aprovado em 23/10/2026.
+
+```bash
+cd motion
+npm ci
+npm run studio
+npm run render
+npm run verify
+```
+
+O render gera `out/teslinha-commercial.mp4` em 1080×1920, 30 FPS, H.264. A pasta de saída e as dependências não são versionadas. A documentação do projeto explica configuração, áudio opcional, testes e análise da referência. Dados de interfaces são demonstrativos.
+
+## Segurança de credenciais
 
 Credenciais e tokens locais devem ficar no arquivo `.env`, que é ignorado pelo Git. Nunca publique esse arquivo, coloque segredos no README ou envie tokens em commits. Se uma credencial for exposta, revogue-a e gere outra no Meta antes de utilizá-la.
 

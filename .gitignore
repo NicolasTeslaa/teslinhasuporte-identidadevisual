@@ -2,3 +2,8 @@
 .env.*
 !.env.example
 .DS_Store
+node_modules/
+out/
+motion/build/
+motion/.remotion/
+motion/public/audio/*.wav
