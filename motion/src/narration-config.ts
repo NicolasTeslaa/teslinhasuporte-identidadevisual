@@ -1,26 +1,17 @@
 import type {NarrationCue} from './narration';
 
-/** Masculina pt-BR; frases curtas seguem os momentos do roteiro já aprovado. */
+/** Voz A escolhida pelo usuário: Kokoro pm_alex, pt-BR, sem alteração de tom. */
 export const narrationSettings = {
-  voice:'pt-BR-AntonioNeural', rate:'-3%', pitch:'-2Hz',
-  source:'audio/narration-masculina-v01.wav', sampleRate:48000,
+  voice:'pm_alex',rate:'1.0',pitch:'native',engine:'kokoro-onnx',clipExtension:'wav',
+  source:'audio/narration-voz-a-v02.wav',sampleRate:48000,
 } as const;
-
 export const narrationCues:readonly NarrationCue[] = [
-  {id:'01-problema',from:12,to:112,text:'Sua empresa não precisa de mais ferramentas.'},
-  {id:'01-solucao',from:125,to:228,text:'Precisa das ferramentas certas.'},
-  {id:'02-dispersao',from:252,to:380,text:'Planilhas, retrabalho e informações espalhadas.'},
-  {id:'02-repeticao',from:390,to:469,text:'O mesmo trabalho, mais de uma vez.'},
-  {id:'03-unica',from:493,to:557,text:'Sua empresa é única.'},
-  {id:'03-rotina',from:572,to:680,text:'Por que seu sistema não acompanha sua rotina?'},
-  {id:'04-marca',from:703,to:755,text:'Teslinha Suporte.'},
-  {id:'04-proposta',from:763,to:859,text:'Tecnologia feita para o seu negócio.'},
-  {id:'05-clientes',from:880,to:1003,text:'Clientes e vendas, com cada oportunidade no lugar certo.'},
-  {id:'05-gestao',from:1018,to:1147,text:'Gestão em tempo real, com mais clareza.'},
-  {id:'05-automacao',from:1160,to:1280,text:'Automações que conectam cada etapa da sua rotina.'},
-  {id:'06-tarefas',from:1304,to:1388,text:'Menos tarefas repetitivas.'},
-  {id:'06-tempo',from:1413,to:1488,text:'Mais tempo para crescer.'},
-  {id:'07-negocio',from:1515,to:1585,text:'Seu negócio evolui.'},
-  {id:'07-tecnologia',from:1600,to:1669,text:'Sua tecnologia também.'},
-  {id:'08-contato',from:1684,to:1795,text:'Vamos simplificar? Fale com a Teslinha Suporte.'},
+  {id:'v02-01-operacao',from:10,to:232,text:'Quando cada parte da empresa depende de uma ferramenta diferente, acompanhar a operação fica mais difícil.'},
+  {id:'v02-02-retrabalho',from:248,to:472,text:'A equipe perde tempo procurando informações, repetindo cadastros e conferindo o que já deveria estar organizado.'},
+  {id:'v02-03-entendimento',from:489,to:681,text:'Para resolver isso, começamos entendendo como você trabalha e o que precisa melhorar.'},
+  {id:'v02-04-sob-medida',from:699,to:861,text:'Esse entendimento orienta a construção de um sistema sob medida.'},
+  {id:'v02-05-recursos',from:879,to:1282,text:'Podemos reunir o histórico dos clientes, facilitar o acompanhamento da operação e conectar tarefas que hoje dependem de atualizações manuais. Cada recurso é definido a partir da sua necessidade.'},
+  {id:'v02-06-equipe',from:1299,to:1491,text:'Assim, sua equipe pode dedicar mais atenção ao atendimento e às decisões do negócio.'},
+  {id:'v02-07-evolucao',from:1508,to:1672,text:'E, conforme surgem novas demandas, podemos evoluir a solução com você.'},
+  {id:'v02-08-contato',from:1687,to:1795,text:'Conte seu desafio para a Teslinha Suporte.'},
 ];

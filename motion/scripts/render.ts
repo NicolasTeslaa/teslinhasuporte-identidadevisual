@@ -5,11 +5,12 @@ import {existsSync} from 'node:fs';
 import {resolve} from 'node:path';
 import assert from 'node:assert/strict';
 import {createSoundDesign} from '../src/audio';
+import {narrationSettings} from '../src/narration-config';
 import {defaultProps} from '../src/Commercial';
 
 const mode=process.argv[2]??'video';
 const renderProps={...defaultProps,narration:!process.argv.includes('--no-narration')};
-if(renderProps.narration&&!existsSync('public/audio/narration-masculina-v01.wav'))throw new Error('Narração ausente. Restaure o WAV versionado ou execute npm run narration -- --synthesize.');
+if(renderProps.narration&&!existsSync(resolve('public',narrationSettings.source)))throw new Error('Narração ausente. Restaure o WAV versionado ou execute npm run narration -- --synthesize.');
 if(!['video','preview','stills'].includes(mode))throw new Error('Use video, preview ou stills.');
 await mkdir('../out/stills',{recursive:true});
 if(!existsSync('public/audio/sound-design.wav')) {
@@ -35,7 +36,7 @@ try {
     await writeFile('../out/stills/manifest.json',JSON.stringify({frames,cuts,composition},null,2));
   } else {
     let last=-1;
-    const suffix=renderProps.narration?'-narrado':'';
+    const suffix=renderProps.narration?'-voz-a-musica-v02':'';
     const outputLocation=resolve(`../out/teslinha-${mode==='preview'?'preview':'commercial'}${suffix}.mp4`);
     await renderMedia({serveUrl,composition,puppeteerInstance:browser,outputLocation,codec:'h264',pixelFormat:'yuv420p',crf:mode==='preview'?23:18,scale:mode==='preview'?0.5:1,concurrency:4,imageFormat:'jpeg',jpegQuality:95,audioCodec:'aac',audioBitrate:'192k',inputProps:renderProps,logLevel:'error',onProgress:({progress})=>{const pct=Math.floor(progress*20)*5;if(pct!==last){last=pct;console.log(`Render ${pct}%`);}}});
     console.log(`Vídeo: ${outputLocation}`);

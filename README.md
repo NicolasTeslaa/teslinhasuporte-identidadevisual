@@ -63,7 +63,7 @@ npm run render
 npm run verify
 ```
 
-O render gera a versão com narração masculina em `out/teslinha-commercial-narrado.mp4` em 1080×1920, 30 FPS, H.264. A pasta de saída e as dependências não são versionadas. A documentação do projeto explica configuração, áudio opcional, testes e análise da referência. Dados de interfaces são demonstrativos.
+O render gera a versão com narração contextual na voz A e música discreta em `out/teslinha-commercial-voz-a-musica-v02.mp4` em 1080×1920, 30 FPS, H.264. A pasta de saída e as dependências não são versionadas. A documentação do projeto explica configuração, áudio opcional, testes e análise da referência. Dados de interfaces são demonstrativos.
 
 ## Segurança de credenciais
 

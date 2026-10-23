@@ -11,3 +11,6 @@ motion/public/audio/*.wav
 !motion/public/audio/narration-masculina-v01.wav
 __pycache__/
 motion/.venv-narration/
+!motion/public/audio/narration-voz-a-v02.wav
+!motion/public/audio/music-original-v01.wav
+motion/.models/

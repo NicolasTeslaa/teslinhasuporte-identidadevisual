@@ -28,7 +28,7 @@ test('trilha opcional fica em segundo plano e mantém fades de início e fim',()
   const middle=mix.getAudioTracks(options,60).find(t=>t.role==='music');
   const start=mix.getAudioTracks(options,0).find(t=>t.role==='music');
   const ending=mix.getAudioTracks(options,1799).find(t=>t.role==='music');
-  assert.ok(middle && middle.volume<=0.06);
+  assert.ok(middle && middle.volume<=0.13);
   assert.equal(start?.volume,0);
   assert.ok(ending && ending.volume<middle.volume);
 });

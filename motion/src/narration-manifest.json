@@ -1,168 +1,88 @@
 {
-  "voice": "pt-BR-AntonioNeural",
-  "rate": "-3%",
-  "pitch": "-2Hz",
-  "source": "audio/narration-masculina-v01.wav",
+  "voice": "pm_alex",
+  "rate": "1.0",
+  "pitch": "native",
+  "source": "audio/narration-voz-a-v02.wav",
   "regions": [
     {
-      "id": "01-problema",
-      "from": 12,
-      "to": 112,
-      "text": "Sua empresa não precisa de mais ferramentas.",
+      "id": "v02-01-operacao",
+      "from": 10,
+      "to": 232,
+      "text": "Quando cada parte da empresa depende de uma ferramenta diferente, acompanhar a operação fica mais difícil.",
       "playbackRate": 1,
-      "durationInFrames": 85,
-      "originalSeconds": 2.8292916666666668,
-      "actualSeconds": 2.8292916666666668
+      "durationInFrames": 205,
+      "originalSeconds": 6.8133125,
+      "actualSeconds": 6.8133125
     },
     {
-      "id": "01-solucao",
-      "from": 125,
-      "to": 228,
-      "text": "Precisa das ferramentas certas.",
+      "id": "v02-02-retrabalho",
+      "from": 248,
+      "to": 472,
+      "text": "A equipe perde tempo procurando informações, repetindo cadastros e conferindo o que já deveria estar organizado.",
       "playbackRate": 1,
-      "durationInFrames": 63,
-      "originalSeconds": 2.089958333333333,
-      "actualSeconds": 2.089958333333333
+      "durationInFrames": 203,
+      "originalSeconds": 6.747375,
+      "actualSeconds": 6.747375
     },
     {
-      "id": "02-dispersao",
-      "from": 252,
-      "to": 380,
-      "text": "Planilhas, retrabalho e informações espalhadas.",
+      "id": "v02-03-entendimento",
+      "from": 489,
+      "to": 681,
+      "text": "Para resolver isso, começamos entendendo como você trabalha e o que precisa melhorar.",
       "playbackRate": 1,
-      "durationInFrames": 99,
-      "originalSeconds": 3.2792291666666666,
-      "actualSeconds": 3.2792291666666666
+      "durationInFrames": 157,
+      "originalSeconds": 5.212958333333333,
+      "actualSeconds": 5.212958333333333
     },
     {
-      "id": "02-repeticao",
-      "from": 390,
-      "to": 469,
-      "text": "O mesmo trabalho, mais de uma vez.",
+      "id": "v02-04-sob-medida",
+      "from": 699,
+      "to": 861,
+      "text": "Esse entendimento orienta a construção de um sistema sob medida.",
       "playbackRate": 1,
-      "durationInFrames": 73,
-      "originalSeconds": 2.4069166666666666,
-      "actualSeconds": 2.4069166666666666
+      "durationInFrames": 120,
+      "originalSeconds": 3.993125,
+      "actualSeconds": 3.993125
     },
     {
-      "id": "03-unica",
-      "from": 493,
-      "to": 557,
-      "text": "Sua empresa é única.",
+      "id": "v02-05-recursos",
+      "from": 879,
+      "to": 1282,
+      "text": "Podemos reunir o histórico dos clientes, facilitar o acompanhamento da operação e conectar tarefas que hoje dependem de atualizações manuais. Cada recurso é definido a partir da sua necessidade.",
       "playbackRate": 1,
-      "durationInFrames": 41,
-      "originalSeconds": 1.3520625,
-      "actualSeconds": 1.3520625
+      "durationInFrames": 358,
+      "originalSeconds": 11.921791666666667,
+      "actualSeconds": 11.921791666666667
     },
     {
-      "id": "03-rotina",
-      "from": 572,
-      "to": 680,
-      "text": "Por que seu sistema não acompanha sua rotina?",
+      "id": "v02-06-equipe",
+      "from": 1299,
+      "to": 1491,
+      "text": "Assim, sua equipe pode dedicar mais atenção ao atendimento e às decisões do negócio.",
       "playbackRate": 1,
-      "durationInFrames": 84,
-      "originalSeconds": 2.7976875,
-      "actualSeconds": 2.7976875
+      "durationInFrames": 162,
+      "originalSeconds": 5.386770833333333,
+      "actualSeconds": 5.386770833333333
     },
     {
-      "id": "04-marca",
-      "from": 703,
-      "to": 755,
-      "text": "Teslinha Suporte.",
+      "id": "v02-07-evolucao",
+      "from": 1508,
+      "to": 1672,
+      "text": "E, conforme surgem novas demandas, podemos evoluir a solução com você.",
       "playbackRate": 1,
-      "durationInFrames": 40,
-      "originalSeconds": 1.3076666666666668,
-      "actualSeconds": 1.3076666666666668
+      "durationInFrames": 135,
+      "originalSeconds": 4.481354166666667,
+      "actualSeconds": 4.481354166666667
     },
     {
-      "id": "04-proposta",
-      "from": 763,
-      "to": 859,
-      "text": "Tecnologia feita para o seu negócio.",
-      "playbackRate": 1,
-      "durationInFrames": 70,
-      "originalSeconds": 2.3020625,
-      "actualSeconds": 2.3020625
-    },
-    {
-      "id": "05-clientes",
-      "from": 880,
-      "to": 1003,
-      "text": "Clientes e vendas, com cada oportunidade no lugar certo.",
-      "playbackRate": 1,
-      "durationInFrames": 114,
-      "originalSeconds": 3.7827083333333333,
-      "actualSeconds": 3.7827083333333333
-    },
-    {
-      "id": "05-gestao",
-      "from": 1018,
-      "to": 1147,
-      "text": "Gestão em tempo real, com mais clareza.",
-      "playbackRate": 1,
-      "durationInFrames": 87,
-      "originalSeconds": 2.888125,
-      "actualSeconds": 2.888125
-    },
-    {
-      "id": "05-automacao",
-      "from": 1160,
-      "to": 1280,
-      "text": "Automações que conectam cada etapa da sua rotina.",
-      "playbackRate": 1,
-      "durationInFrames": 97,
-      "originalSeconds": 3.2203541666666666,
-      "actualSeconds": 3.2203541666666666
-    },
-    {
-      "id": "06-tarefas",
-      "from": 1304,
-      "to": 1388,
-      "text": "Menos tarefas repetitivas.",
-      "playbackRate": 1,
-      "durationInFrames": 60,
-      "originalSeconds": 1.9769583333333334,
-      "actualSeconds": 1.9769583333333334
-    },
-    {
-      "id": "06-tempo",
-      "from": 1413,
-      "to": 1488,
-      "text": "Mais tempo para crescer.",
-      "playbackRate": 1,
-      "durationInFrames": 49,
-      "originalSeconds": 1.6028125,
-      "actualSeconds": 1.6028125
-    },
-    {
-      "id": "07-negocio",
-      "from": 1515,
-      "to": 1585,
-      "text": "Seu negócio evolui.",
-      "playbackRate": 1,
-      "durationInFrames": 48,
-      "originalSeconds": 1.5925833333333332,
-      "actualSeconds": 1.5925833333333332
-    },
-    {
-      "id": "07-tecnologia",
-      "from": 1600,
-      "to": 1669,
-      "text": "Sua tecnologia também.",
-      "playbackRate": 1,
-      "durationInFrames": 51,
-      "originalSeconds": 1.6909583333333333,
-      "actualSeconds": 1.6909583333333333
-    },
-    {
-      "id": "08-contato",
-      "from": 1684,
+      "id": "v02-08-contato",
+      "from": 1687,
       "to": 1795,
-      "text": "Vamos simplificar? Fale com a Teslinha Suporte.",
-      "playbackRate": 1.0712894144144143,
-      "durationInFrames": 110,
-      "originalSeconds": 3.923770833333333,
-      "actualSeconds": 3.666354166666667
+      "text": "Conte seu desafio para a Teslinha Suporte.",
+      "playbackRate": 1,
+      "durationInFrames": 82,
+      "originalSeconds": 2.7077708333333335,
+      "actualSeconds": 2.7077708333333335
     }
   ]
 }

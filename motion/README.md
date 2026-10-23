@@ -1,84 +1,70 @@
-# Teslinha Suporte — comercial vertical
+# Teslinha Suporte — comercial com voz A e música
 
-Projeto completo React + TypeScript + Remotion com oito cenas independentes e comercial de **60 segundos, 1080×1920, 30 FPS**, agora com narração masculina em português brasileiro. Roteiro e identidade aprovados em 23/10/2026. Logos oficiais locais; interfaces e animações originais em HTML/CSS/SVG.
+React + TypeScript + Remotion. **60 segundos, 1080×1920, 30 FPS**, oito cenas independentes, identidade e logo oficiais. Roteiro contextual aprovado; voz masculina A escolhida pelo usuário. A narração complementa os textos visuais e cita a marca apenas na última frase. Trilha instrumental original discreta, com redução de volume durante a voz.
 
 ## Executar
 
-Node.js 22 ou superior e npm. Python 3 é usado no teste de cache e, opcionalmente, para regenerar a voz; não é necessário para renderizar a narração incluída. Na pasta `motion/`:
+Node.js 22+, npm e Python 3 somente para o teste de cache. Render e Studio usam os WAVs incluídos, sem necessidade de modelo, conta, API ou rede após instalar dependências e Chromium.
 
 ```bash
 npm ci
-npm run audio
 npm run studio
-```
-
-No Studio, selecione `TeslinhaCommercial` ou `Cenas / Cena01` … `Cena08`. O Studio oferece reprodução, navegação por frame e renderização. O navegador de renderização do Remotion é baixado automaticamente na primeira execução; fonte, logo e efeitos ficam locais. Depois desse preparo, o render não depende de serviços externos.
-
-```bash
-npm run validate   # testes de comportamento, layout no Chromium, contraste e TypeScript
-npm run stills     # 13 quadros de cenas e 7 de transições em ../out/stills/
-npm run preview    # MP4 narrado 540×960 para revisão rápida
-npm run render     # ../out/teslinha-commercial-narrado.mp4, H.264 yuv420p, CRF 18
-npm run verify     # ffprobe + decodificação completa FFmpeg
-```
-
-Os scripts de render geram o WAV automaticamente caso ele não exista. A primeira execução de `validate` também pode baixar o Chromium. Artefatos em `out/`, efeitos gerados e dependências não são versionados. A narração final aprovada fica versionada em `public/audio/narration-masculina-v01.wav`, permitindo render local sem regenerar a voz. `package-lock.json` fixa as versões do projeto.
-
-## Configurar
-
-- `src/config.ts`: mensagens principais, paleta, marca, contato, dados demonstrativos, duração e áudio.
-- `src/scenes/Scene01.tsx` … `Scene08.tsx`: oito cenas originais.
-- `src/components/Software.tsx`: interfaces demonstrativas de clientes/vendas, gestão e automações.
-- `src/narration-config.ts`: texto, voz e janelas de cada fala; `src/narration-manifest.json`: duração real e posicionamento.
-- `src/audio-mix.ts`: voz e redução automática dos efeitos durante a fala.
-- `src/animation.ts`: progressão e modelos determinísticos; não há `Math.random`, relógio ou CSS animations.
-- `src/timeline.ts`: sobreposição de 12 frames sem encurtar os 1800 frames contratados.
-- `public/brand/teslinha-logo.png`: cópia da logo oficial de `assets/logo/LOGO PNG TRANSPARENTE.png`.
-- `src/style.css`: tipografia Manrope local e estilos das interfaces.
-
-Para alterar o WhatsApp padrão, edite `brand.contact`. O input prop `contact` também permite trocar o contato no Studio ou no CLI:
-
-```bash
-npx remotion render src/index.ts TeslinhaCommercial ../out/teslinha-contato.mp4 --props='{"contact":"seu contato","effects":true,"music":null,"narration":true}'
-```
-
-O render do CLI acima exige gerar os efeitos antes com `npm run audio`.
-
-## Áudio e direitos
-
-Esta entrega usa **sound design sintético original** de transições, cliques e revelação de marca, gerado deterministicamente por `src/audio.ts`. Inclui narração sintética masculina em português brasileiro, com voz padrão `pt-BR-AntonioNeural`, sincronizada por frase. Não contém música nem áudio extraído da referência. O arquivo pode ser substituído em `public/audio/sound-design.wav`.
-
-Para adicionar música cuja licença você possui, coloque o arquivo em `public/audio/music.mp3` e altere `audioConfig.music` para `audio/music.mp3` em `src/config.ts`. O volume é configurável e o componente aplica entrada/saída gradual. Também pode passar `music` nos input props. `effects: false` exporta sem os efeitos. `narration: false` exporta sem voz. Os textos falados seguem o roteiro; alterar o contato visual não altera o WAV, que não fala o número de telefone.
-
-A fonte Manrope é distribuída sob SIL Open Font License 1.1; a licença está em `licenses/manrope-OFL.txt`. Logo e identidade foram fornecidas pelo usuário. A referência nunca integra o bundle nem o vídeo final. O uso do Remotion obedece à [licença do fornecedor](https://www.remotion.dev/license); este projeto não inclui chave de licença.
-
-## Narração
-
-O WAV incluído permite reprodução e render sem conexão. Não há clonagem de voz nem identificação como um locutor real específico. O serviço online é consultado somente quando a voz é regenerada; a renderização usa exclusivamente arquivos locais.
-
-Para editar e regenerar a voz:
-
-```bash
-python3 -m venv .venv-narration
-.venv-narration/bin/pip install -r requirements-narration.txt
-TESLINHA_TTS_PYTHON="$PWD/.venv-narration/bin/python3" npm run narration -- --synthesize
 npm run render
 npm run verify
 ```
 
-Edite `src/narration-config.ts` antes de regenerar. O cache considera texto, voz, velocidade e tom; alterações invalidam o trecho correspondente. Nenhuma fala é cortada para caber: o processo rejeita trechos longos demais; ajuste o texto ou a janela e gere novamente. Pequenos ajustes usam `atempo`, preservando o tom, com limite de 12%. A última frase desta versão recebeu cerca de 7% de ajuste; as demais mantêm o ritmo original.
-
-Para renderizar a versão sem narração:
+O Studio oferece `TeslinhaCommercial` e `Cenas / Cena01` … `Cena08`. A composição principal inclui narração e música; as cenas individuais servem à inspeção visual.
 
 ```bash
-npm run render -- --no-narration
-npm run verify -- ../out/teslinha-commercial.mp4 --no-narration
+npm run validate  # testes Node, cache Python e TypeScript
+npm run stills    # 20 quadros de conteúdo e transições
+npm run preview   # 540×960, voz A e música
+npm run render    # ../out/teslinha-commercial-voz-a-musica-v02.mp4
+npm run verify    # metadados, decodificação completa e comparação das oito falas com a voz de referência
+npm run audio     # regenerar efeitos originais
+npm run music     # regenerar trilha original determinística
 ```
 
-As composições individuais `Cena01`…`Cena08` continuam disponíveis para inspeção visual. A narração completa está na composição principal. Veja `NARRATION.md` para texto e tempos reais.
+O render baixa Chromium na primeira execução. Depois disso, fonte, logo, narração e música são locais. Arquivos em `out/` não são versionados. Os áudios finais de voz e música ficam versionados; efeitos são gerados automaticamente se ausentes.
 
-## Qualidade e limites
+## Configuração
 
-Margens principais: 84 px laterais, 220 px superiores e 300 px inferiores. A interface do Instagram pode variar; os quadros foram verificados nessa área conservadora. Dados de CRM e gestão são fictícios e identificados como demonstração; não representam clientes, faturamento ou resultados da Teslinha.
+- `src/config.ts`: identidade, dados demonstrativos, contato e música padrão.
+- `src/narration-config.ts`: roteiro contextual e janela de cada parágrafo.
+- `src/narration-manifest.json`: posições e durações reais, gerado pelo montador.
+- `src/audio-mix.ts`: redução gradual de música e efeitos durante a voz.
+- `src/music.ts`: trilha instrumental original, sem samples externos.
+- `src/scenes/` e `src/components/`: cenas e interfaces originais HTML/CSS/SVG.
 
-Veja `REFERENCE.md` para análise da referência e `QA.md` para evidências dos testes, inspeção e render final.
+Input props: `contact` (texto), `narration` (booleano), `effects` (booleano), `music` (caminho relativo a public/ ou null). Alterar o contato não muda o áudio: o número não é falado.
+
+Exemplo de exportação só com voz, sem música ou efeitos:
+
+```bash
+npx remotion render src/index.ts TeslinhaCommercial ../out/teslinha-so-voz.mp4 --props='{"contact":"(11) 91024-6542","narration":true,"effects":false,"music":null}'
+```
+
+## Regenerar a voz escolhida
+
+O WAV já incluído é suficiente para renderizar. Estes passos opcionais reproduzem a síntese local com o mesmo modelo e a mesma voz A. Requerem Python 3.12 e cerca de 340 MB para modelo/vozes, além do runtime.
+
+```bash
+python3.12 -m venv .venv-narration
+.venv-narration/bin/pip install -r requirements-narration.txt
+mkdir -p .models/kokoro
+curl -fL -o .models/kokoro/kokoro-v1.0.onnx https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/kokoro-v1.0.onnx
+curl -fL -o .models/kokoro/voices-v1.0.bin https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/voices-v1.0.bin
+TESLINHA_TTS_PYTHON="$PWD/.venv-narration/bin/python3" TESLINHA_KOKORO_MODELS="$PWD/.models/kokoro" npm run narration -- --synthesize
+npm run render
+npm run verify
+```
+
+A síntese usa `scripts/synthesize-natural.py`. Cache compara texto, voz, velocidade e tom. A montagem rejeita cache antigo, sobreposição, fala ausente ou longa demais. Nesta versão não houve ajuste de velocidade. `src/narration-editorial.ts` exige uma única menção da marca, na última fala. Os scripts antigos do serviço Edge são mantidos como histórico e não são usados pela nova versão.
+
+`npm run render -- --no-narration` exporta sem voz, mantendo a música padrão. Para preservar arquivos antigos, exporte uma variação por CLI com outro caminho, como no exemplo anterior. `npm run verify -- outro.mp4 --no-narration` verifica uma exportação sem voz. Para desativar música, use `music: null` nos input props.
+
+## Direitos e validação
+
+Logo fornecida pelo usuário; Manrope sob OFL; Kokoro sob Apache 2.0 e kokoro-onnx sob MIT. Licenças em `licenses/`. Trilha e efeitos são composições procedurais originais. Nenhum áudio, frame ou marca do vídeo de referência integra o resultado. Consulte também a [licença do Remotion](https://www.remotion.dev/license).
+
+Interfaces apresentam dados ilustrativos; nenhum resultado comercial foi inventado. Margens de segurança preservadas. `REFERENCE.md` contém a análise de ritmo, `NARRATION.md` os textos e tempos, e `QA.md` as verificações reais.

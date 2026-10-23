@@ -36,7 +36,7 @@ export const demo = {
   metrics: [{label: 'Pedidos', value: '128', trend: 'este mês'}, {label: 'Em andamento', value: '24', trend: 'na operação'}, {label: 'Concluídos', value: '104', trend: 'no período'}],
   tasks: ['Receber solicitação', 'Organizar cadastro', 'Avisar a equipe', 'Atualizar o status'],
 };
-export const audioConfig = {effects: 'audio/sound-design.wav', music: null as string | null, musicVolume: 0.16};
+export const audioConfig = {effects: 'audio/sound-design.wav', music: 'audio/music-original-v01.wav' as string | null, musicVolume: 0.16};
 
 export const ui = {
   "connectedOperation": "Sua operação, conectada do início ao fim.",

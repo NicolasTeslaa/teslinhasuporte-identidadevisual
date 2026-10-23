@@ -7,19 +7,21 @@ import {planNarration,placeNarration} from '../src/narration';
 import {requireNarrationClip} from './narration-cache';
 import {readPcmWav,trimPcmSilence} from './pcm';
 
-const output=resolve('../out/narration');
+import {validateBrandMention} from '../src/narration-editorial';
+validateBrandMention(narrationCues.map(c=>c.text));
+const output=resolve('../out/narration-v02');
 await mkdir(`${output}/clips`,{recursive:true});
 await writeFile(`${output}/script.json`,JSON.stringify({settings:narrationSettings,cues:narrationCues},null,2));
 if(process.argv.includes('--synthesize')) {
   const python=process.env.TESLINHA_TTS_PYTHON??'python3';
-  const result=spawnSync(python,['scripts/synthesize-narration.py','--script',`${output}/script.json`,'--out',`${output}/clips`],{stdio:'inherit'});
+  const result=spawnSync(python,['scripts/synthesize-natural.py','--script',`${output}/script.json`,'--out',`${output}/clips`],{stdio:'inherit'});
   if(result.error)throw result.error;
   if(result.status!==0)throw new Error('Falha na síntese. Instale requirements-narration.txt no ambiente Python informado.');
 }
 const ff=(args:string[])=>RenderInternals.callFf({bin:'ffmpeg',args:['-v','error','-y',...args],indent:false,logLevel:'error',binariesDirectory:null,cancelSignal:undefined});
 const pcm:Int16Array[]=[];
 for(const cue of narrationCues) {
-  const input=`${output}/clips/${cue.id}.mp3`,wave=`${output}/clips/${cue.id}.wav`;
+  const input=`${output}/clips/${cue.id}.wav`,wave=`${output}/clips/${cue.id}-48k.wav`;
   await requireNarrationClip(input,{text:cue.text,voice:narrationSettings.voice,rate:narrationSettings.rate,pitch:narrationSettings.pitch});
   await ff(['-i',input,'-ar','48000','-ac','1','-c:a','pcm_s16le',wave]);
   const decoded=readPcmWav(await readFile(wave));

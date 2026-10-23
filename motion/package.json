@@ -14,7 +14,8 @@
     "preview": "tsx scripts/render.ts preview",
     "verify": "tsx scripts/verify.ts",
     "narration": "tsx scripts/build-narration.ts",
-    "test:narration-cache": "python3 -m unittest discover -s tests -p 'test_narration_synthesis.py'"
+    "test:narration-cache": "python3 -m unittest discover -s tests -p 'test_narration_synthesis.py'",
+    "music": "tsx scripts/generate-music.ts"
   },
   "dependencies": {
     "@fontsource/manrope": "5.3.0",

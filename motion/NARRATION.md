@@ -1,36 +1,40 @@
-# Narração masculina — Teslinha Suporte
+# Narração contextual — voz A e trilha original
 
-Solicitada e aprovada pelo usuário em 23/10/2026: português brasileiro, voz masculina, tom natural, confiante e comercial, acompanhando as animações existentes. Mantém as mensagens aprovadas; pontuação ajustada para pausas naturais. Não houve alteração visual.
+Usuário aprovou o roteiro contextual e escolheu a voz A em 23/10/2026. A narração explica o problema, o levantamento da operação, a construção sob medida e os benefícios esperados. O nome da empresa aparece somente no encerramento. Não houve alteração visual.
 
-Voz sintética padrão: `pt-BR-AntonioNeural`; velocidade de síntese `-3%`, tom `-2Hz`. Geração via [edge-tts](https://github.com/rany2/edge-tts); voz masculina pt-BR documentada pela [Microsoft](https://learn.microsoft.com/azure/ai-services/speech-service/language-support). Sem clonagem de voz ou música emprestada. Texto enviado para síntese limita-se às falas deste comercial.
+## Voz e sincronização
 
-WAV local: `public/audio/narration-masculina-v01.wav`, PCM mono, 48 kHz, 60 segundos. Normalização para -16 LUFS, true peak alvo -1,5 dBTP. As durações abaixo derivam das amostras reais depois de retirar silêncio externo; preservamos 60 ms nas bordas. Nenhuma fala é truncada.
+Voz A: `pm_alex`, Kokoro v1.0, português brasileiro (`pt-br`), velocidade nativa 1.0, sem alteração de pitch. Mesmos parâmetros da amostra escolhida: pausa entre frases de 0,32 s e entre orações de 0,12 s. Síntese local com kokoro-onnx. Oito parágrafos, um por cena, com pausas naturais; nenhum trecho desta versão foi acelerado ou truncado.
+
+WAV: `public/audio/narration-voz-a-v02.wav`, PCM mono, 48 kHz, exatamente 60 segundos, alvo -16 LUFS. Manifesto de duração e janelas em `src/narration-manifest.json`.
 
 | Início | Fim da fala | Texto |
 |---|---|---|
-| 0.40 s | 3.23 s | Sua empresa não precisa de mais ferramentas. |
-| 4.17 s | 6.27 s | Precisa das ferramentas certas. |
-| 8.40 s | 11.70 s | Planilhas, retrabalho e informações espalhadas. |
-| 13.00 s | 15.43 s | O mesmo trabalho, mais de uma vez. |
-| 16.43 s | 17.80 s | Sua empresa é única. |
-| 19.07 s | 21.87 s | Por que seu sistema não acompanha sua rotina? |
-| 23.43 s | 24.77 s | Teslinha Suporte. |
-| 25.43 s | 27.77 s | Tecnologia feita para o seu negócio. |
-| 29.33 s | 33.13 s | Clientes e vendas, com cada oportunidade no lugar certo. |
-| 33.93 s | 36.83 s | Gestão em tempo real, com mais clareza. |
-| 38.67 s | 41.90 s | Automações que conectam cada etapa da sua rotina. |
-| 43.47 s | 45.47 s | Menos tarefas repetitivas. |
-| 47.10 s | 48.73 s | Mais tempo para crescer. |
-| 50.50 s | 52.10 s | Seu negócio evolui. |
-| 53.33 s | 55.03 s | Sua tecnologia também. |
-| 56.13 s | 59.80 s | Vamos simplificar? Fale com a Teslinha Suporte. |
+| 0.33 s | 7.17 s | Quando cada parte da empresa depende de uma ferramenta diferente, acompanhar a operação fica mais difícil. |
+| 8.27 s | 15.03 s | A equipe perde tempo procurando informações, repetindo cadastros e conferindo o que já deveria estar organizado. |
+| 16.30 s | 21.53 s | Para resolver isso, começamos entendendo como você trabalha e o que precisa melhorar. |
+| 23.30 s | 27.30 s | Esse entendimento orienta a construção de um sistema sob medida. |
+| 29.30 s | 41.23 s | Podemos reunir o histórico dos clientes, facilitar o acompanhamento da operação e conectar tarefas que hoje dependem de atualizações manuais. Cada recurso é definido a partir da sua necessidade. |
+| 43.30 s | 48.70 s | Assim, sua equipe pode dedicar mais atenção ao atendimento e às decisões do negócio. |
+| 50.27 s | 54.77 s | E, conforme surgem novas demandas, podemos evoluir a solução com você. |
+| 56.23 s | 58.97 s | Conte seu desafio para a Teslinha Suporte. |
 
-Ajuste de tempo máximo permitido: 12%, sem alteração de pitch. Nesta versão, somente o encerramento precisou de ajuste: 7.1%. Demais trechos mantiveram a velocidade original.
+## Trilha de fundo
 
-A mixagem mantém a voz a volume 1 e reduz os efeitos de 0,8 para 0,18 durante as falas, com entrada de 6 frames e recuperação em 9 frames. O MP4 narrado é uma nova saída; o arquivo anterior sem narração é preservado.
+Composição instrumental original em `src/music.ts`: 96 BPM, acordes suaves Cmaj7/Am7/Fmaj7/Gsus, notas dedilhadas e pulsação leve, sem voz e sem samples externos. O arquivo `public/audio/music-original-v01.wav` é gerado por `npm run music`. A faixa tem entrada de 2 s e saída de 3 s.
 
-## Validação
+A mixagem mantém a voz em volume 1, música em 0,12 durante a fala e até 0,20 nas pausas, e efeitos em 0,18 durante a fala. Reduções e recuperações são graduais. Música sem narração usa o volume configurável em `audioConfig.musicVolume`. `music: null` desliga a trilha.
 
-TDD em planejamento de falas, rejeição de sobreposição, montagem sem corte, leitura de PCM, silêncio de borda, redução de efeitos, seleção de faixas e invalidação de cache. A verificação final decodifica o MP4, mede energia nas 16 regiões de fala e rejeita trechos inaudíveis. Essa medição verifica presença e volume; não é uma transcrição nem uma avaliação subjetiva da voz.
+## Reprodução e direitos
 
-O script de regeneração está em `scripts/build-narration.ts` e `scripts/synthesize-narration.py`; requisitos Python opcionais em `requirements-narration.txt`. Renderizar o WAV já incluído não exige Python, rede ou chave de API.
+O render usa apenas os arquivos locais incluídos; não precisa baixar modelo nem instalar Python para gerar o MP4. Os WAVs anteriores e os vídeos anteriores são preservados. A nova saída é `out/teslinha-commercial-voz-a-musica-v02.mp4`.
+
+Para regenerar a voz, siga `README.md`. Modelo Kokoro v1.0 sob Apache 2.0, runtime kokoro-onnx sob MIT; cópias das licenças em `licenses/`. Não há clonagem de pessoa específica. O modelo e suas vozes não são distribuídos neste repositório, apenas o áudio gerado. Fontes: [Kokoro](https://huggingface.co/hexgrad/Kokoro-82M), [vozes pt-BR](https://huggingface.co/hexgrad/Kokoro-82M/blob/main/VOICES.md), [runtime e downloads](https://github.com/thewh1teagle/kokoro-onnx).
+
+A checagem do MP4 compara cada região com a forma de onda da voz original (correlação mínima 0,7, tolerância de atraso de 20 ms), além da energia. Música sozinha não satisfaz esse teste. Não é transcrição nem avaliação subjetiva da naturalidade. A escolha subjetiva da voz foi feita pelo usuário ouvindo as amostras.
+
+
+SHA-256 dos arquivos do modelo usados para gerar esta versão:
+
+- `kokoro-v1.0.onnx`: `beb0d1848dee9a49da392cc3df26958d46cfa35d321edf434f52949153f0df3a`
+- `voices-v1.0.bin`: `bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d`

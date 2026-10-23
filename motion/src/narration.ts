@@ -57,3 +57,26 @@ export function verifyNarrationAudibility(samples:Int16Array,regions:readonly (N
     return {id:region.id,rms:Math.round(rms)};
   });
 }
+
+/** Check waveform agreement, so background music cannot satisfy a missing-voice check. */
+export function verifyNarrationReference(samples:Int16Array,reference:Int16Array,regions:readonly (NarrationRegion&{id:string})[],sampleRate=48000):{id:string;rms:number;correlation:number}[] {
+  const audible=verifyNarrationAudibility(samples,regions,sampleRate);
+  const radius=Math.round(sampleRate*0.02),stride=Math.max(1,Math.round(sampleRate/1500)),lagStep=Math.max(1,Math.round(sampleRate/6000));
+  return regions.map((region,index)=>{
+    const start=Math.round(region.from/30*sampleRate),end=Math.round((region.from+region.durationInFrames)/30*sampleRate);
+    if(end>reference.length)throw new Error('Referência de narração incompleta.');
+    let best=0;
+    for(let lag=-radius;lag<=radius;lag+=lagStep) {
+      let dot=0,signalEnergy=0,referenceEnergy=0;
+      for(let i=start;i<end;i+=stride) {
+        const at=i+lag;if(at<0||at>=samples.length)continue;
+        const a=samples[at],b=reference[i];
+        dot+=a*b;signalEnergy+=a*a;referenceEnergy+=b*b;
+      }
+      const correlation=dot/Math.sqrt(signalEnergy*referenceEnergy||1);
+      best=Math.max(best,correlation);
+    }
+    if(best<0.7)throw new Error(`Áudio final não corresponde à narração de referência na fala ${region.id}.`);
+    return {...audible[index],correlation:Math.round(best*10000)/10000};
+  });
+}

@@ -3,5 +3,5 @@ export function parseVerificationArgs(args:readonly string[]):{narration:boolean
   const paths=args.filter(arg=>!arg.startsWith('--'));
   if(paths.length>1)throw new Error('Informe somente um caminho MP4.');
   const narration=!args.includes('--no-narration');
-  return {narration,file:paths[0]??`../out/teslinha-commercial${narration?'-narrado':''}.mp4`};
+  return {narration,file:paths[0]??`../out/teslinha-commercial${narration?'-voz-a-musica-v02':''}.mp4`};
 }

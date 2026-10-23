@@ -26,7 +26,7 @@ test('montagem rejeita cache antigo mesmo quando não solicita nova síntese',as
 test('flag isolada sem narração escolhe o vídeo anterior, não um caminho chamado flag',()=>{
   assert.ok(cli,'parser da verificação ainda não implementado');
   assert.deepEqual(cli.parseVerificationArgs(['--no-narration']),{narration:false,file:'../out/teslinha-commercial.mp4'});
-  assert.deepEqual(cli.parseVerificationArgs([]),{narration:true,file:'../out/teslinha-commercial-narrado.mp4'});
+  assert.deepEqual(cli.parseVerificationArgs([]),{narration:true,file:'../out/teslinha-commercial-voz-a-musica-v02.mp4'});
   assert.deepEqual(cli.parseVerificationArgs(['other.mp4','--no-narration']),{narration:false,file:'other.mp4'});
   assert.throws(()=>cli.parseVerificationArgs(['--unknown']));
 });

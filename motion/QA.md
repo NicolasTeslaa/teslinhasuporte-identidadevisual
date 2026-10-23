@@ -42,3 +42,21 @@ Usuário solicitou voz masculina em português brasileiro, natural, confiante e 
 - Revisão independente apontou risco de cache antigo no caminho sem síntese e interpretação da flag isolada como arquivo. Ambos corrigidos com testes; rechecagem confirmou validação completa, sem achados pendentes nesse escopo.
 
 Veja `NARRATION.md` para voz, texto completo, tempos e regeneração. A energia por trecho valida presença/volume, sem alegar transcrição automática ou avaliação subjetiva da voz. A narração é sintética e usa uma voz padrão; não é clonagem de pessoa real específica. O WAV final fica versionado para render local reproduzível.
+
+
+## Atualização — voz A contextual e trilha (v02)
+
+Usuário escolheu a voz A (Kokoro `pm_alex`) entre duas amostras e aprovou narração contextual, com a marca apenas na última frase, e música discreta. Oito parágrafos em vez de ler os títulos das telas. Nenhum parágrafo foi acelerado ou truncado. Identidade e vídeo visual permanecem iguais.
+
+- `npm run validate`: **29 testes Node + 1 Python**, TypeScript passou.
+- Regressão da raiz: **15 testes**, todos passaram. Total: **45 testes**.
+- `npm run render`: gerou `out/teslinha-commercial-voz-a-musica-v02.mp4`.
+- `npm run verify`: H.264 yuv420p, 1080×1920, 30 FPS, 1800 frames, 60 segundos, AAC 48 kHz; decodificação completa sem erros. Oito falas conferidas por correlação com o WAV original da voz A.
+- TDD: observado RED e GREEN para regra editorial de menção da marca, trilha determinística sem clipping, e volume musical reduzido durante a voz. Testes de integração conferem manifesto, texto e durações reais.
+- A revisão independente encontrou que energia total do áudio poderia aceitar música sozinha como voz. Novo teste com os WAVs reais reproduziu a ausência da validação por referência. A implementação passou a exigir correlação de forma de onda por região (mínimo 0,7, tolerância de atraso de 20 ms), além da energia. Música sem voz é rejeitada; voz com música é aceita.
+
+Música instrumental original gerada em `src/music.ts`, 96 BPM, sem samples externos, com fades e ducking. Narração local a velocidade nativa, sem alteração de pitch; oito WAVs intermediários foram montados nas janelas aprovadas. Arquivos finais incluídos no repositório e no ZIP para render offline, após instalação das dependências e Chromium.
+
+A verificação de forma de onda confirma presença e posição da voz gerada, sem alegar análise semântica nem avaliação subjetiva da interpretação. A voz foi escolhida pelo usuário ouvindo as amostras. Licenças do modelo Apache 2.0 e runtime MIT incluídas. Modelos não são distribuídos no ZIP.
+
+Medição final da mixagem AAC: loudness integrado **-17,42 LUFS**, true peak **-4,19 dBTP**, LRA **4,2 LU**, sem clipping. Correlação mínima da voz no vídeo: **0,9967**. Rechecagem independente confirmou 29 testes Node + 1 Python e TypeScript, sem achados pendentes no escopo revisado.
