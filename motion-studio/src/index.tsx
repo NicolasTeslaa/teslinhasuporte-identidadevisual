@@ -5,7 +5,7 @@ import './styles.css';
 
 export const Root: React.FC = () => (
   <>
-    <Composition id="VervalMobileAd" component={VervalMobileAd} durationInFrames={720} fps={30} width={1080} height={1920} />
+    <Composition id="VervalMobileAd" component={VervalMobileAd} durationInFrames={900} fps={30} width={1080} height={1920} />
   </>
 );
 

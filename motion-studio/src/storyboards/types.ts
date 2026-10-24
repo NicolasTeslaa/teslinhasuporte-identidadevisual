@@ -6,7 +6,7 @@ export type StoryboardBeat = {
   to: number;
   asset: string;
   goal: string;
-  onScreen?: { eyebrow?: string; title: string; body?: string; y: number; height: number };
+  onScreen?: { eyebrow?: string; title: string; body?: string; caption?: string; y: number; height: number };
   narration: string;
   transition: BeatTransition;
   focalPoint?: { x: number; y: number };

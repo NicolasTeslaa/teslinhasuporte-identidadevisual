@@ -4,38 +4,16 @@ export const vervalMobileStoryboard: Storyboard = {
   fps: 30,
   width: 1080,
   height: 1920,
-  durationInFrames: 720,
+  durationInFrames: 900,
   safeArea: { left: 84, right: 996, top: 220, bottom: 1620 },
   beats: [
-    {
-      id: 'hook', from: 0, to: 90, asset: 'IMG_2181.PNG', goal: 'Criar identificação imediata com a rotina corrida do empreendedor.',
-      onScreen: { eyebrow: 'VERVAL MOBILE', title: 'Seu negócio cabe no celular?', body: 'Uma visão clara para decidir melhor, todos os dias.', y: 260, height: 300 },
-      narration: 'Quando a rotina aperta, você precisa enxergar o negócio com clareza — onde estiver.', transition: 'fade', focalPoint: { x: 0.5, y: 0.42 },
-    },
-    {
-      id: 'finance', from: 90, to: 240, asset: 'IMG_2189.PNG', goal: 'Mostrar leitura financeira rápida e acionável.',
-      onScreen: { eyebrow: 'VISÃO FINANCEIRA', title: 'Veja o que entra, sai e sobra.', body: 'Saldo, lucro previsto e movimentações em uma só leitura.', y: 260, height: 300 },
-      narration: 'Acompanhe entradas, saídas e lucro previsto em uma leitura simples, sem perder tempo procurando informação.', transition: 'push', focalPoint: { x: 0.5, y: 0.34 },
-    },
-    {
-      id: 'launches', from: 240, to: 390, asset: 'IMG_2188.PNG', goal: 'Conectar lançamentos e fluxo de caixa à tomada de decisão.',
-      onScreen: { eyebrow: 'CONTROLE DIÁRIO', title: 'Registre cada movimento.', body: 'Vendas, despesas e recebimentos ficam organizados.', y: 260, height: 300 },
-      narration: 'Registre vendas, despesas e recebimentos no momento em que acontecem, com tudo organizado para consultar depois.', transition: 'push', focalPoint: { x: 0.5, y: 0.34 },
-    },
-    {
-      id: 'operations', from: 390, to: 570, asset: 'IMG_2186.PNG', goal: 'Apresentar recorrências, clientes e módulos como ecossistema.',
-      onScreen: { eyebrow: 'OPERAÇÃO CONECTADA', title: 'Menos planilhas. Mais controle.', body: 'Clientes, recorrências e módulos que acompanham seu negócio.', y: 260, height: 300 },
-      narration: 'Clientes, recorrências, produtos e serviços ficam no mesmo lugar — para a operação continuar fluindo.', transition: 'push', focalPoint: { x: 0.5, y: 0.34 },
-    },
-    {
-      id: 'synthesis', from: 570, to: 630, asset: 'IMG_2184.PNG', goal: 'Resumir a proposta em uma frase memorável.',
-      onScreen: { eyebrow: 'TUDO JUNTO', title: 'Seu negócio, no seu ritmo.', body: 'Uma central feita para quem faz acontecer.', y: 260, height: 300 },
-      narration: 'No fim, é menos improviso e mais tempo para cuidar do que faz seu negócio crescer.', transition: 'fade', focalPoint: { x: 0.5, y: 0.3 },
-    },
-    {
-      id: 'cta', from: 630, to: 720, asset: 'IMG_2181.PNG', goal: 'Encerrar com marca e convite claro para experimentar.',
-      onScreen: { eyebrow: 'COMECE AGORA', title: 'Verval Mobile', body: 'Controle seu negócio de onde estiver.', y: 280, height: 260 },
-      narration: 'Conheça o Verval Mobile e leve o controle do seu negócio com você.', transition: 'fade', focalPoint: { x: 0.5, y: 0.42 },
-    },
+    { id: 'chaos-hook', from: 0, to: 120, asset: 'IMG_2185.PNG', goal: 'Abrir com a tensão de vender muito sem saber o que sobra.', onScreen: { eyebrow: 'A ROTINA APERTA', title: 'VENDEU MUITO.', body: 'SOBROU QUANTO?', caption: 'Você vende muito. Mas quanto sobra?', y: 270, height: 320 }, narration: 'Você vende muito. Mas quanto sobra?', transition: 'fade', focalPoint: { x: .5, y: .38 } },
+    { id: 'chaos-problems', from: 120, to: 240, asset: 'IMG_2187.PNG', goal: 'Mostrar despesas, cobranças e estoque como sinais de desorganização.', onScreen: { eyebrow: 'QUANDO TUDO FICA ESPALHADO', title: 'DESPESAS. COBRANÇAS. ESTOQUE.', body: 'Informações importantes, em lugares diferentes.', caption: 'Contas, cobranças e estoque espalhados travam decisões.', y: 250, height: 350 }, narration: 'Contas, cobranças e estoque espalhados travam decisões.', transition: 'push', focalPoint: { x: .5, y: .4 } },
+    { id: 'chaos-decision', from: 240, to: 330, asset: 'IMG_2188.PNG', goal: 'Concentrar a sensação de tempo perdido e decisão travada.', onScreen: { eyebrow: 'E O TEMPO VAI EMBORA', title: 'FALTA CLAREZA?', body: 'Isso trava as próximas decisões.', y: 300, height: 300 }, narration: '', transition: 'fade', focalPoint: { x: .5, y: .38 } },
+    { id: 'reveal', from: 330, to: 420, asset: 'IMG_2181.PNG', goal: 'Virar a atmosfera e revelar o produto.', onScreen: { eyebrow: 'UMA NOVA FORMA DE ORGANIZAR', title: 'VERVAL', body: 'Seu negócio na palma da mão.', caption: 'Conheça o Verval: seu negócio na palma da mão.', y: 300, height: 300 }, narration: 'Conheça o Verval: seu negócio na palma da mão.', transition: 'fade', focalPoint: { x: .5, y: .4 } },
+    { id: 'finance', from: 420, to: 570, asset: 'IMG_2189.PNG', goal: 'Provar a visão financeira com tela real e benefícios legíveis.', onScreen: { eyebrow: 'VISÃO FINANCEIRA', title: 'ENTRADAS. DESPESAS. SALDO. LUCRO.', body: 'Uma leitura rápida para decidir melhor.', caption: 'Veja entradas, despesas, saldo e lucro.', y: 260, height: 340 }, narration: 'Veja entradas, despesas, saldo e lucro.', transition: 'push', focalPoint: { x: .5, y: .34 } },
+    { id: 'operations', from: 570, to: 720, asset: 'IMG_2186.PNG', goal: 'Apresentar a amplitude da operação sem simular telas inexistentes.', onScreen: { eyebrow: 'OPERAÇÃO CONECTADA', title: 'VENDAS. CLIENTES. PRODUTOS.', body: 'Tudo organizado no mesmo lugar.', caption: 'Controle vendas, clientes, produtos e recorrências.', y: 270, height: 320 }, narration: 'Controle vendas, clientes, produtos e recorrências.', transition: 'push', focalPoint: { x: .5, y: .35 } },
+    { id: 'clarity', from: 720, to: 810, asset: 'IMG_2184.PNG', goal: 'Concluir a transformação com alívio e clareza.', onScreen: { eyebrow: 'DEPOIS FICA MAIS SIMPLES', title: 'MAIS CONTROLE. MAIS CLAREZA.', body: 'Para cuidar melhor do que faz o negócio crescer.', caption: 'Mais organização, mais clareza para crescer.', y: 300, height: 300 }, narration: 'Mais organização, mais clareza para crescer.', transition: 'fade', focalPoint: { x: .5, y: .32 } },
+    { id: 'cta', from: 810, to: 900, asset: 'IMG_2181.PNG', goal: 'Assinar a ideia com marca, benefício e chamada para ação.', onScreen: { eyebrow: 'GESTÃO NO SEU RITMO', title: 'SIMPLIFIQUE SUA GESTÃO.', body: 'Conheça o Verval Mobile.', caption: 'Verval. Simplifique sua gestão.', y: 300, height: 300 }, narration: 'Verval. Simplifique sua gestão.', transition: 'fade', focalPoint: { x: .5, y: .4 } },
   ],
 };

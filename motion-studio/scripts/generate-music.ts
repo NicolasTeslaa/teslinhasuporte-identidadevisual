@@ -1,7 +1,7 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const sampleRate = 48000; const seconds = 24; const samples = sampleRate * seconds;
+const sampleRate = 48000; const seconds = 30; const samples = sampleRate * seconds;
 const frequency = (note: number) => 440 * 2 ** ((note - 69) / 12);
 const chords = [[48, 55, 59, 64], [45, 52, 55, 60], [41, 48, 52, 57], [43, 50, 55, 60]];
 const pcm = new Int16Array(samples);

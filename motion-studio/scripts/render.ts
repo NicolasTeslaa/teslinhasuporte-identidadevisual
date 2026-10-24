@@ -11,7 +11,7 @@ const browser = await openBrowser('chrome', { logLevel: 'error' });
 try {
   const composition = await selectComposition({ serveUrl, id: 'VervalMobileAd', puppeteerInstance: browser });
   if (mode === 'stills') {
-    const frames = [30, 120, 270, 420, 540, 600, 690];
+    const frames = [30, 150, 270, 360, 450, 600, 750, 870];
     for (const frame of frames) await renderStill({ serveUrl, composition, puppeteerInstance: browser, frame, output: resolve(`out/stills/frame-${String(frame).padStart(4, '0')}.png`), imageFormat: 'png', logLevel: 'error' });
     console.log(`Stills renderizados: ${frames.length}`);
   } else {

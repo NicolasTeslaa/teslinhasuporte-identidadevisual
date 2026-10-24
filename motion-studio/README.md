@@ -1,6 +1,6 @@
 # Verval Motion Studio
 
-Sistema paralelo ao projeto `motion/` para anúncios verticais do Verval Mobile. A composição `VervalMobileAd` trabalha em 1080×1920, 30 fps e 24 segundos, usando captures reais do app como fonte visual.
+Sistema paralelo ao projeto `motion/` para anúncios verticais do Verval Mobile. A composição `VervalMobileAd` trabalha em 1080×1920, 30 fps e 30 segundos, usando captures reais do app como fonte visual.
 
 ## Fluxo local
 

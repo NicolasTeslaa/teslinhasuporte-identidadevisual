@@ -4,14 +4,14 @@ import { vervalMobileStoryboard } from '../src/storyboards/verval-mobile';
 import { validateStoryboard } from '../src/storyboards/validate';
 
 describe('Verval Mobile storyboard', () => {
-  it('covers the 24-second vertical timeline without gaps or overlaps', () => {
+  it('covers the 30-second vertical timeline without gaps or overlaps', () => {
     assert.equal(vervalMobileStoryboard.fps, 30);
     assert.equal(vervalMobileStoryboard.width, 1080);
     assert.equal(vervalMobileStoryboard.height, 1920);
-    assert.equal(vervalMobileStoryboard.durationInFrames, 720);
+    assert.equal(vervalMobileStoryboard.durationInFrames, 900);
     assert.deepEqual(
       vervalMobileStoryboard.beats.map(({ from, to }) => [from, to]),
-      [[0, 90], [90, 240], [240, 390], [390, 570], [570, 630], [630, 720]],
+      [[0, 120], [120, 240], [240, 330], [330, 420], [420, 570], [570, 720], [720, 810], [810, 900]],
     );
     assert.deepEqual(validateStoryboard(vervalMobileStoryboard), []);
   });
