@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {execFileSync} from 'node:child_process';
+const file=process.argv[2]??'out/limpeza/final.mp4';
+const info=JSON.parse(execFileSync('ffprobe',['-v','error','-show_streams','-show_format','-of','json',file],{encoding:'utf8'}));
+const video=info.streams.find((s:any)=>s.codec_type==='video');
+const audio=info.streams.find((s:any)=>s.codec_type==='audio');
+assert.equal(video.width,1080);assert.equal(video.height,1920);assert.equal(video.r_frame_rate,'30/1');assert.equal(Number(video.nb_frames),900);assert.equal(video.codec_name,'h264');assert.equal(audio.codec_name,'aac');assert.equal(Number(audio.sample_rate),48000);
+assert.equal(Number(info.format.duration),30,'contêiner deve durar exatamente 30s');
+assert.equal(Number(video.duration),30);assert.equal(Number(audio.duration),30);
+execFileSync('ffmpeg',['-v','error','-i',file,'-f','null','-'],{stdio:'pipe'});
+console.log('PASS: 1080×1920, 30 fps, 900 quadros, vídeo/áudio/contêiner 30.000s, H.264/AAC 48kHz e decodificação completa.');

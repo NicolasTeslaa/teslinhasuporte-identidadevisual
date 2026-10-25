@@ -1,0 +1,37 @@
+[
+  {
+    "scene": 0,
+    "start": 0.5,
+    "end": 3.94,
+    "text": "Faz tempo que você não limpa seu computador ou videogame?",
+    "source": "base-0.wav"
+  },
+  {
+    "scene": 1,
+    "start": 5.6,
+    "end": 9.68,
+    "text": "A poeira pode causar aquecimento, barulho e prejudicar o desempenho.",
+    "source": "base-1.wav"
+  },
+  {
+    "scene": 2,
+    "start": 11.2,
+    "end": 16.64,
+    "text": "Limpeza profissional por duzentos reais por equipamento: computador ou videogame.",
+    "source": "base-2.wav"
+  },
+  {
+    "scene": 3,
+    "start": 17.4,
+    "end": 24.2,
+    "text": "Em Várzea Paulista, buscamos na sua casa e entregamos quando estiver pronto. Coleta e entrega grátis!",
+    "source": "coleta-base.wav"
+  },
+  {
+    "scene": 4,
+    "start": 25.8,
+    "end": 28.52,
+    "text": "Chame no WhatsApp e agende sua limpeza!",
+    "source": "base-4.wav"
+  }
+]

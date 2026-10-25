@@ -1,0 +1,42 @@
+@import '@fontsource/manrope/800.css';
+.clean-ad{font-family:Manrope,sans-serif;overflow:hidden;letter-spacing:-.025em}
+.clean-blue{background:#0551DA;color:#FFFFFF}.clean-light{background:#FFFFFF;color:#0551DA}
+.clean-orbit{position:absolute;width:1500px;height:1550px;left:150px;top:740px;border:2px solid currentColor;border-radius:50%;opacity:.12;pointer-events:none}
+.clean-orbit:after{content:'';position:absolute;inset:70px;border:1px solid currentColor;border-radius:50%}
+.clean-world{position:absolute;left:-25px;top:540px;width:1080px;height:930px;z-index:1}
+.clean-world-1{top:545px;transform:scale(1.06)}
+.clean-world-2{top:420px;transform:scale(.82);transform-origin:center top}
+.clean-world-3{top:640px;transform:scale(.97);transform-origin:center top}
+.clean-editorial{position:absolute;inset:0;z-index:2}
+.clean-hook{position:absolute;left:94px;top:266px;margin:0;font-size:87px;line-height:1.04;font-weight:800;letter-spacing:-.035em;color:inherit;max-width:850px}
+.clean-hook span{color:#C2CEE1}
+.clean-device-label{position:absolute;top:1337px;left:94px;font-size:30px;font-weight:700;letter-spacing:.025em}
+.clean-device-label span{margin:0 20px;font-size:23px;color:#FFFFFF}
+.clean-problem{position:absolute;left:94px;top:330px;right:135px;display:flex;align-items:center;height:160px}
+.clean-word{font-size:83px;line-height:1.05;font-weight:800;letter-spacing:-.035em}
+.clean-heat{position:absolute;left:150px;top:1290px;width:730px}
+.clean-heat-label{display:flex;justify-content:space-between;font-size:27px;font-weight:700;letter-spacing:.06em;margin-bottom:18px}
+.clean-meter{height:10px;background:#4A494D;border-radius:6px;overflow:hidden}
+.clean-meter>div{height:100%;background:#FFFFFF;border-radius:6px}
+.clean-solution{position:absolute;left:94px;top:255px;margin:0;font-size:70px;line-height:1.07;letter-spacing:-.035em;font-weight:800}
+.clean-price-card{position:absolute;left:130px;top:1050px;width:770px;height:340px;background:#0551DA;color:#FFFFFF;border-radius:16px;text-align:center;padding:10px 0 25px;box-shadow:0 22px 60px #0551da24}
+.clean-price{font-size:157px;line-height:1.2;font-weight:800;letter-spacing:-.04em}
+.clean-price>span{font-size:65px;letter-spacing:-.025em}
+.clean-per{font-size:27px;font-weight:700;letter-spacing:.08em}
+.clean-equipment{font-size:33px;font-weight:700;margin-top:24px;color:#FFFFFF}
+.clean-delivery{position:absolute;left:94px;top:276px;font-size:57px;line-height:1.1;margin:0;font-weight:800}
+.clean-free{position:absolute;left:90px;top:365px;font-size:111px;line-height:1.2;font-weight:800;letter-spacing:-.04em;transform-origin:left center}
+.clean-city{position:absolute;left:96px;top:530px;font-size:33px;letter-spacing:.035em;font-weight:700;color:#4A494D}
+.clean-route-label{position:absolute;left:150px;top:1330px;width:730px;display:flex;align-items:center;justify-content:space-between;font-size:30px;font-weight:800;border-top:2px solid #C2CEE1;padding-top:25px}
+.clean-logo{position:absolute;left:363px;top:255px;width:305px;height:307px;object-fit:contain}
+.clean-end-price{position:absolute;left:94px;top:620px;width:840px;text-align:center;font-size:45px;font-weight:700}
+.clean-end-price strong{display:block;font-size:158px;line-height:1.25;font-weight:800;letter-spacing:-.04em}
+.clean-end-price small{font-size:66px}
+.clean-end-price>span{display:block;font-size:25px;letter-spacing:.06em;color:#FFFFFF}
+.clean-end-delivery{position:absolute;left:94px;top:974px;width:840px;text-align:center;font-size:43px;line-height:1.25;font-weight:700}
+.clean-end-delivery strong{font-size:65px;font-weight:800}
+.clean-end-city{position:absolute;left:94px;top:1155px;width:840px;text-align:center;font-size:31px;font-weight:600}
+.clean-cta{position:absolute;left:94px;top:1270px;width:840px;height:112px;padding:0 29px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:20px;background:#FFFFFF;color:#0551DA;border-radius:16px;font-size:30px;font-weight:800;letter-spacing:-.025em}
+.clean-caption{position:absolute;left:94px;top:1480px;width:840px;z-index:5;text-align:center;font-size:33px;line-height:1.35;font-weight:600;letter-spacing:-.015em}
+.clean-caption>span{display:inline-block;background:#4A494D;color:#FFFFFF;padding:14px 25px;border-radius:12px;max-width:100%;box-sizing:border-box}
+.clean-wipe{position:absolute;left:0;top:-400px;height:2700px;width:850px;background:#C2CEE1;z-index:8;border-radius:50%}

@@ -18,3 +18,7 @@ npm run verify
 Os renders ficam em `out/`. A narração é exportada em WAV pelo Qwen; o MP4 final usa H.264 + AAC. Para MP3, converta qualquer WAV local com `ffmpeg -i arquivo.wav -codec:a libmp3lame arquivo.mp3`.
 
 Novos anúncios devem começar em `src/storyboards/`, reaproveitar os componentes em `src/components/` e manter os textos dentro da safe area definida em `src/storyboards/verval-mobile.ts`.
+
+## Comercial de limpeza — Teslinha
+
+A composição independente `LimpezaAd` e sua produção estão documentadas em [LIMPEZA.md](LIMPEZA.md). Render: `npx tsx scripts/render-limpeza.ts final`.
